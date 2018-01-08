@@ -184,11 +184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\projects\\dotnetcore\\BigBang\\1 - Aplicacao\\BigBang.Aplicacao\\BigBang.Aplicacao.csproj",
+      "projectUniqueName": "d:\\Documents\\projects\\dotnetcore\\BigBang\\Aplicacao\\2 - Aplicacao\\BigBang.Aplicacao\\BigBang.Aplicacao.csproj",
       "projectName": "BigBang.Aplicacao",
-      "projectPath": "D:\\Documents\\projects\\dotnetcore\\BigBang\\1 - Aplicacao\\BigBang.Aplicacao\\BigBang.Aplicacao.csproj",
+      "projectPath": "d:\\Documents\\projects\\dotnetcore\\BigBang\\Aplicacao\\2 - Aplicacao\\BigBang.Aplicacao\\BigBang.Aplicacao.csproj",
       "packagesPath": "C:\\Users\\lenno\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\projects\\dotnetcore\\BigBang\\1 - Aplicacao\\BigBang.Aplicacao\\obj\\",
+      "outputPath": "d:\\Documents\\projects\\dotnetcore\\BigBang\\Aplicacao\\2 - Aplicacao\\BigBang.Aplicacao\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",

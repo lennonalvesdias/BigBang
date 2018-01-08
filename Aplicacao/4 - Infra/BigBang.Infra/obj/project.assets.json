@@ -184,11 +184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\projects\\dotnetcore\\BigBang\\3 - Infra\\BigBang.Infra\\BigBang.Infra.csproj",
+      "projectUniqueName": "d:\\Documents\\projects\\dotnetcore\\BigBang\\Aplicacao\\4 - Infra\\BigBang.Infra\\BigBang.Infra.csproj",
       "projectName": "BigBang.Infra",
-      "projectPath": "D:\\Documents\\projects\\dotnetcore\\BigBang\\3 - Infra\\BigBang.Infra\\BigBang.Infra.csproj",
+      "projectPath": "d:\\Documents\\projects\\dotnetcore\\BigBang\\Aplicacao\\4 - Infra\\BigBang.Infra\\BigBang.Infra.csproj",
       "packagesPath": "C:\\Users\\lenno\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\projects\\dotnetcore\\BigBang\\3 - Infra\\BigBang.Infra\\obj\\",
+      "outputPath": "d:\\Documents\\projects\\dotnetcore\\BigBang\\Aplicacao\\4 - Infra\\BigBang.Infra\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
