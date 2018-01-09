@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RecursosCompartilhados.Dados.Repositorios
 {
-    public class BaseRepositorio<TEntidade, TContexto> : IRepository<TEntidade> where TEntidade : class where TContexto : DbContext, new()
+    public class BaseRepositorio<TEntidade, TContexto> : IBaseRepositorio<TEntidade> where TEntidade : class where TContexto : DbContext, new()
     {
         protected TContexto Contexto { get; set; } = new TContexto();
         protected readonly DbSet<TEntidade> DbSet;
@@ -29,12 +29,12 @@ namespace RecursosCompartilhados.Dados.Repositorios
             return DbSet;
         }
 
-        public virtual bool Atualizar(TEntidade entidade)
+        public virtual void Atualizar(TEntidade entidade)
         {
             DbSet.Update(entidade);
         }
 
-        public virtual bool Remover(Guid codigo)
+        public virtual void Remover(Guid codigo)
         {
             DbSet.Remove(DbSet.Find(codigo));
         }
