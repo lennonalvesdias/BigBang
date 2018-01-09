@@ -4,7 +4,6 @@ namespace RecursosCompartilhados.Dominio.Entidades
 {
     public abstract class BaseEntidade
     {
-        public int Id { get; set; }
         public Guid Codigo { get; protected set; }
 
         public DateTime DataAtualizacaoRegistro { get; set; }
@@ -39,7 +38,7 @@ namespace RecursosCompartilhados.Dominio.Entidades
 
         public override int GetHashCode()
         {
-            return (GetType().GetHashCode() * 907) + Id.GetHashCode();
+            return (GetType().GetHashCode() * 907) + Codigo.GetHashCode();
         }
 
         public override string ToString()
