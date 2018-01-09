@@ -41,13 +41,18 @@ namespace RecursosCompartilhados.Dados.Repositorios
 
         public int Salvar()
         {
-            return Context.SaveChanges();
+            return Contexto.SaveChanges();
         }
 
         public void Descartar()
         {
             Contexto.Dispose();
             GC.SuppressFinalize(this);
+        }
+
+        public void Dispose()
+        {
+            Contexto.Dispose();
         }
     }
 }

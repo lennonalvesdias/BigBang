@@ -1,18 +1,29 @@
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace RecursosCompartilhados.Dados.Contexto
 {
-    public abstract class BaseContexto : DbContext
+    public abstract class BaseContexto: DbContext
     {
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        public BaseContexto(DbContextOptions options) : base(options)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-            modelBuilder.Properties<string>().Configure(p => p.HasColumnType("VARCHAR"));
-            modelBuilder.Properties<string>().Configure(p => p.HasMaxLength(120));
+        }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             base.OnModelCreating(modelBuilder);
         }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+        //    modelBuilder.Properties<string>().Configure(p => p.HasColumnType("VARCHAR"));
+        //    modelBuilder.Properties<string>().Configure(p => p.HasMaxLength(120));
+
+        //    base.OnModelCreating(modelBuilder);
+        //}
 
         public override int SaveChanges()
         {
@@ -38,12 +49,12 @@ namespace RecursosCompartilhados.Dados.Contexto
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
+            //var config = new ConfigurationBuilder()
+            //    .SetBasePath(Directory.GetCurrentDirectory())
+            //    .AddJsonFile("appsettings.json")
+            //    .Build();
             
-            optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+            //optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
         }
     }
 }
