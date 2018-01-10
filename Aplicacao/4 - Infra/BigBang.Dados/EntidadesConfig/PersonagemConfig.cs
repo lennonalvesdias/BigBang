@@ -10,12 +10,9 @@ namespace BigBang.Dados.EntidadesConfig
         {
             builder.ToTable("Personagem");
             builder.HasIndex(x => new {x.Nome, x.Principal});
-
             builder.Property(x => x.Codigo).ValueGeneratedOnAdd().IsRequired();
-            builder.Property(x => x.Nome)
-                .IsRequired()
-                .HasMaxLength(80);
-                
+
+            builder.Property(x => x.Nome).HasMaxLength(80).IsRequired();
             builder.Property(x => x.Principal).IsRequired();
         }
     }
