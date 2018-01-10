@@ -5,6 +5,7 @@ using BigBang.Dominio.Interfaces.Repositorios;
 using BigBang.Dominio.Interfaces.Servicos;
 using BigBang.Dominio.Servicos;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BigBang.Infra
 {
