@@ -5,6 +5,7 @@ namespace RecursosCompartilhados.Dados.Contexto
 {
     public abstract class BaseContexto : DbContext
     {
+        public abstract void ModeloCriacao(ModelBuilder modelBuilder);
         public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries())

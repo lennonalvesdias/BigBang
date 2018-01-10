@@ -1,7 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using RecursosCompartilhados.Dominio.Interfaces.Repositorios;
 using System;
 using System.Linq;
-using RecursosCompartilhados.Dominio.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace RecursosCompartilhados.Dados.Repositorios
 {
