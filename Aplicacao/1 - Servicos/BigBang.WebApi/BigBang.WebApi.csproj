@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../../2 - Aplicacao/BigBang.Aplicacao/BigBang.Aplicacao.csproj" />
+    <ProjectReference Include="../../../RecursosCompartilhados/2 - Aplicacao/RecursosCompartilhados.Aplicacao/RecursosCompartilhados.Aplicacao.csproj" />
     <ProjectReference Include="../../4 - Infra/BigBang.Infra/BigBang.Infra.csproj" />
   </ItemGroup>
 
