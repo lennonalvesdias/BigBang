@@ -13,9 +13,6 @@ namespace BigBang.Infra
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            // ASP.NET HttpContext dependency
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
             // Aplicacao - ServicosApp
             services.AddScoped<IPersonagemServicosApp, PersonagemServicosApp>();
 

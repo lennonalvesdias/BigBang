@@ -1,5 +1,4 @@
-﻿using BigBang.Infra;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -64,7 +63,8 @@ namespace BigBang.WebApi
 
         private static void RegisterServices(IServiceCollection services)
         {
-            NativeInjectorBootStrapper.RegisterServices(services);
+            BigBang.Infra.NativeInjectorBootStrapper.RegisterServices(services);
+            RecursosCompartilhados.Infra.NativeInjectorBootStrapper.RegisterServices(services);
         }
     }
 }

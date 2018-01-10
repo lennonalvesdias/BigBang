@@ -8,8 +8,10 @@ namespace BigBang.Dados.EntidadesConfig
     {
         public void Configure(EntityTypeBuilder<Personagem> builder)
         {
-            builder.Property(c => c.Codigo)
-                .HasColumnName("Id");
+            builder.ToTable("Personagens");
+
+            builder.Property(c => c.Id)
+                .HasColumnName("Codigo");
 
             builder.Property(c => c.Nome)
                 .HasColumnType("varchar(100)")
