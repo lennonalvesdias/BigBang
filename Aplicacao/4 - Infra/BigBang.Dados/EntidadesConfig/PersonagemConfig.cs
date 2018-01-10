@@ -8,12 +8,13 @@ namespace BigBang.Dados.EntidadesConfig
     {
         public void Configure(EntityTypeBuilder<Personagem> builder)
         {
-            builder.ToTable("Personagem");
-            builder.HasIndex(x => new {x.Nome, x.Principal});
-            builder.Property(x => x.Codigo).ValueGeneratedOnAdd().IsRequired();
+            builder.Property(c => c.Codigo)
+                .HasColumnName("Id");
 
-            builder.Property(x => x.Nome).HasMaxLength(80).IsRequired();
-            builder.Property(x => x.Principal).IsRequired();
+            builder.Property(c => c.Nome)
+                .HasColumnType("varchar(100)")
+                .HasMaxLength(100)
+                .IsRequired();
         }
     }
 }
