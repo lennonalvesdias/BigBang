@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace RecursosCompartilhados.Dominio.Interfaces
+namespace RecursosCompartilhados.Dominio.Interfaces.Repositorios
 {
     public interface IBaseRepositorio<TEntidade> : IDisposable where TEntidade : class
     {

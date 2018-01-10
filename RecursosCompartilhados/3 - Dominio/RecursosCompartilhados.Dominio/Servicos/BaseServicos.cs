@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using RecursosCompartilhados.Dominio.Interfaces;
+using RecursosCompartilhados.Dominio.Interfaces.Repositorios;
 using RecursosCompartilhados.Dominio.Interfaces.Servicos;
 
 namespace RecursosCompartilhados.Dominio.Servicos
