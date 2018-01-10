@@ -11,7 +11,7 @@ namespace BigBang.Dados.EntidadesConfig
             builder.ToTable("Personagens");
 
             builder.Property(c => c.Id)
-                .HasColumnName("Codigo");
+                .HasColumnName("Id");
 
             builder.Property(c => c.Nome)
                 .HasColumnType("varchar(100)")

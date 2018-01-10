@@ -11,9 +11,9 @@ namespace BigBang.Dados.Contexto
     {
         public DbSet<Personagem> Personagens { get; set; }
 
-        public override void ModeloCriacao(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration<Personagem>(new PersonagemConfig());
+            modelBuilder.ApplyConfiguration(new PersonagemConfig());
 
             base.OnModelCreating(modelBuilder);
         }

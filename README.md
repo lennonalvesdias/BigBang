@@ -5,6 +5,8 @@ Este projeto visa ser código base para as web aplicações, com abstrações e 
 
 Foi construído utilizando como base o [Equinox Project](https://github.com/EduardoPires/EquinoxProject).
 
+Principais responsáveis: [Lennon Alves](https://github.com/lennonalvesdias) e [Eduardo Lamattina](https://github.com/lamattina).
+
 # O que você vai encontrar:
 
   - WebApi desenvolvida em .NET Core

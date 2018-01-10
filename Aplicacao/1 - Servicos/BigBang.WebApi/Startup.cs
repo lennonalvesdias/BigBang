@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Net.Http;
+using BigBang.Dados.Contexto;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Rewrite;
@@ -12,30 +14,40 @@ namespace BigBang.WebApi
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
+        public IConfigurationRoot Configuration { get; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+               .SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+               .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
+
+            builder.AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-
             services.AddSwaggerGen(s =>
             {
                 s.SwaggerDoc("V1", new Info
                 {
-                    Title = "TBBT API",
+                    Title = "BigBang .NET Core",
                     Version = "v1",
-                    Description = "ASP.NET Core Web API <3",
+                    Description = "Projeto em .NET Core 2 utilizando DDD.",
                     TermsOfService = "...",
-                    Contact = new Contact { Name = "Lennon Alves Dias", Email = "lennonalvesdias@gmail.com", Url = "http://www.lennonalves.com.br" },
+                    Contact = new Contact { Name = "Lennon V. Alves Dias", Email = "lennonalvesdias@gmail.com", Url = "http://www.lennonalves.com.br" },
                     License = new License { Name = "", Url = "" }
                 });
             });
+
+            services.AddMvc();
 
             RegisterServices(services);
         }
@@ -47,8 +59,6 @@ namespace BigBang.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwagger();
-
             app.UseCors(c =>
             {
                 c.AllowAnyHeader();
@@ -56,18 +66,17 @@ namespace BigBang.WebApi
                 c.AllowAnyOrigin();
             });
 
+            app.UseMvc();
+
+            app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/Swagger/V1/swagger.json", "TBBT API V1");
+                c.SwaggerEndpoint("/Swagger/V1/swagger.json", "BigBang v1");
             });
 
             var option = new RewriteOptions();
             option.AddRedirect("^$", "swagger");
-
             app.UseRewriter(option);
-
-            app.UseMvc();
-
         }
 
         private static void RegisterServices(IServiceCollection services)

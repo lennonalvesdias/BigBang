@@ -1,5 +1,6 @@
 using BigBang.Aplicacao.Interfaces.ServicosApp;
 using BigBang.Aplicacao.ServicosApp;
+using BigBang.Dados.Contexto;
 using BigBang.Dados.Repositorios;
 using BigBang.Dominio.Interfaces.Repositorios;
 using BigBang.Dominio.Interfaces.Servicos;
@@ -13,7 +14,7 @@ namespace BigBang.Infra
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            // Aplicacao - ServicosApp
+            // Aplicacao
             services.AddScoped<IPersonagemServicosApp, PersonagemServicosApp>();
 
             // Dominio
@@ -21,6 +22,7 @@ namespace BigBang.Infra
 
             // Infra
             services.AddScoped<IPersonagemRepositorio, PersonagemRepositorio>();
+            services.AddScoped<BigBangContexto>();
         }
     }
 }
