@@ -6,6 +6,25 @@ namespace BigBang.Dominio.Entidades
 {
     public class Personagem : BaseEntidade
     {
-        public string Nome { get; set; }
+        protected Personagem() { }
+        public Personagem(string nome)
+        {
+            Nome = nome;
+
+            EValidoAoCriar();
+        }
+        public string Nome { get; private set; }
+
+        private void EValidoAoCriar()
+        {
+            // Domain Notifications
+        }
+
+        private void EValidoAoAtualizar()
+        {
+            // Domain Notifications
+        }
+
+        public override string ToString() => $"Id: {Id}, Nome: {Nome}";
     }
 }

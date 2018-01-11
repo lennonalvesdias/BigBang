@@ -17,6 +17,7 @@ namespace RecursosCompartilhados.Dados.Repositorios
         public virtual void Inserir(TEntidade entidade)
         {
             DbSet.Add(entidade);
+            Salvar();
         }
 
         public virtual TEntidade Buscar(Guid codigo)
@@ -32,11 +33,13 @@ namespace RecursosCompartilhados.Dados.Repositorios
         public virtual void Atualizar(TEntidade entidade)
         {
             DbSet.Update(entidade);
+            Salvar();
         }
 
         public virtual void Remover(Guid codigo)
         {
             DbSet.Remove(DbSet.Find(codigo));
+            Salvar();
         }
 
         public int Salvar()

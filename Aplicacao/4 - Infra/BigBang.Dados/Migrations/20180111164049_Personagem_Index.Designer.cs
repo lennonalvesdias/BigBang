@@ -11,9 +11,10 @@ using System;
 namespace BigBang.Dados.Migrations
 {
     [DbContext(typeof(BigBangContexto))]
-    partial class BigBangContextoModelSnapshot : ModelSnapshot
+    [Migration("20180111164049_Personagem_Index")]
+    partial class Personagem_Index
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,8 +38,7 @@ namespace BigBang.Dados.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Nome")
-                        .IsUnique();
+                    b.HasIndex("Nome");
 
                     b.ToTable("Personagens");
                 });
