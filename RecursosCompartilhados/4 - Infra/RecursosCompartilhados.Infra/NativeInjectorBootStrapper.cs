@@ -1,5 +1,8 @@
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using RecursosCompartilhados.Dominio.Entidades;
+using RecursosCompartilhados.Dominio.Notificacoes;
 
 namespace RecursosCompartilhados.Infra
 {
@@ -9,6 +12,9 @@ namespace RecursosCompartilhados.Infra
         {
             // ASP.NET HttpContext dependency
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            // Dominio
+            services.AddScoped<INotificationHandler<NotificacaoDeDominio>, GerenciadorDeNotificacoes>();
         }
     }
 }

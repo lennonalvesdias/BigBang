@@ -19,9 +19,9 @@ namespace RecursosCompartilhados.Aplicacao.ServicosApp
             _servicos.Atualizar(entidade);
         }
 
-        TEntidade IBaseServicosApp<TEntidade>.Buscar(Guid codigo)
+        TEntidade IBaseServicosApp<TEntidade>.Buscar(Guid id)
         {
-            return _servicos.Buscar(codigo);
+            return _servicos.Buscar(id);
         }
 
         void IDisposable.Dispose()
@@ -39,9 +39,9 @@ namespace RecursosCompartilhados.Aplicacao.ServicosApp
             return _servicos.Listar();
         }
 
-        void IBaseServicosApp<TEntidade>.Remover(Guid codigo)
+        void IBaseServicosApp<TEntidade>.Remover(Guid id)
         {
-            _servicos.Remover(codigo);
+            _servicos.Remover(id);
         }
 
         int IBaseServicosApp<TEntidade>.Salvar()

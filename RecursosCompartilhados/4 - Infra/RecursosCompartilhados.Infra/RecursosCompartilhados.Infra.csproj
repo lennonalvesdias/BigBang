@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../../3 - Dominio/RecursosCompartilhados.Dominio/RecursosCompartilhados.Dominio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
+    <PackageReference Include="MediatR" Version="4.0.1" />
   </ItemGroup>
 
 </Project>

@@ -24,9 +24,9 @@ namespace RecursosCompartilhados.Dominio.Servicos
             _repositorio.Atualizar(entidade);
         }
 
-        TEntidade IBaseServicos<TEntidade>.Buscar(Guid codigo)
+        TEntidade IBaseServicos<TEntidade>.Buscar(Guid id)
         {
-            return _repositorio.Buscar(codigo);
+            return _repositorio.Buscar(id);
         }
 
         void IBaseServicos<TEntidade>.Inserir(TEntidade entidade)
@@ -39,9 +39,9 @@ namespace RecursosCompartilhados.Dominio.Servicos
             return _repositorio.Listar();
         }
 
-        void IBaseServicos<TEntidade>.Remover(Guid codigo)
+        void IBaseServicos<TEntidade>.Remover(Guid id)
         {
-            _repositorio.Remover(codigo);
+            _repositorio.Remover(id);
         }
 
         int IBaseServicos<TEntidade>.Salvar()

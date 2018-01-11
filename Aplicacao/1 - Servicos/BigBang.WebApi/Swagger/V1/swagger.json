@@ -2,67 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "v1",
-    "title": "TBBT API"
+    "title": "BigBang API"
   },
-  "basePath": "/",
-  "paths": {
-    "/api/Personagens": {
-      "get": {
-        "tags": [
-          "Personagens"
-        ],
-        "operationId": "ApiPersonagemGet",
-        "consumes": [],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/TodoItem"
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "..."
-      }
-    },
-    "/api/Personagem/{id}": {
-      "get": {
-        "..."
-      },
-      "put": {
-        "..."
-      },
-      "delete": {
-        "..."
-      },
-      "definitions": {
-        "TodoItem": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "name": {
-              "type": "string"
-            },
-            "isComplete": {
-              "default": false,
-              "type": "boolean"
-            }
-          }
-        }
-      },
-      "securityDefinitions": {}
-    }
-  }
+  "basePath": "/"
 }
