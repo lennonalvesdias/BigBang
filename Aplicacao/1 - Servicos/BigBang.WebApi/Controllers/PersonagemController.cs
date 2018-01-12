@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using BigBang.Aplicacao.Interfaces.ServicosApp;
+using BigBang.Aplicacao.ViewModels;
 using BigBang.Dominio.Entidades;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
