@@ -9,4 +9,9 @@
     <ProjectReference Include="../../3 - Dominio/BigBang.Dominio/BigBang.Dominio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.0" />
+    <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
+  </ItemGroup>
+
 </Project>

@@ -5,6 +5,7 @@ using BigBang.Aplicacao.ViewModels;
 using BigBang.Dominio.Entidades;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using RecursosCompartilhados.Aplicacao.ViewModel;
 using RecursosCompartilhados.Dominio.Entidades;
 using RecursosCompartilhados.WebApi.Controllers;
 
@@ -38,32 +39,32 @@ namespace BigBang.WebApi.Controllers
 
         [HttpPost]
         [Route("personagens")]
-        public IActionResult Post([FromBody]Personagem entidade)
+        public IActionResult Post([FromBody]PersonagemViewModel vm)
         {
             if (!ModelState.IsValid)
             {
                 NotificarErros();
-                return Response(entidade);
+                return Response(vm);
             }
 
-            _servicosApp.Inserir(entidade);
+            _servicosApp.Inserir(vm);
 
-            return Response(entidade);
+            return Response(vm);
         }
 
         [HttpPut]
         [Route("personagens")]
-        public IActionResult Put([FromBody]Personagem entidade)
+        public IActionResult Put([FromBody]PersonagemViewModel vm)
         {
             if (!ModelState.IsValid)
             {
                 NotificarErros();
-                return Response(entidade);
+                return Response(vm);
             }
 
-            _servicosApp.Atualizar(entidade);
+            _servicosApp.Atualizar(vm);
 
-            return Response(entidade);
+            return Response(vm);
         }
 
         [HttpDelete]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net.Http;
+using AutoMapper;
 using BigBang.Dados.Contexto;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +35,8 @@ namespace BigBang.WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // services.AddAutoMapper();
+            
             services.AddSwaggerGen(s =>
             {
                 s.SwaggerDoc("V1", new Info
@@ -48,6 +51,8 @@ namespace BigBang.WebApi
             });
 
             services.AddMvc();
+
+            // services.AddMediatR(typeof(Startup));
 
             RegisterServices(services);
         }
