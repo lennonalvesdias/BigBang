@@ -7,7 +7,7 @@ Foi construído utilizando como base o [Equinox Project](https://github.com/Edua
 
 Desenvolvedores responsáveis: [Lennon Alves](https://github.com/lennonalvesdias) e [Eduardo Lamattina](https://github.com/lamattina).
 
-Participações: [Luiz Mendes](https://github.com/jubamendes).
+Contribuições: [Luiz Mendes](https://github.com/jubamendes).
 
   - Você pode acessar o projeto em execução [clicando aqui](http://104.225.220.166:5000).
 
