@@ -52,8 +52,6 @@ namespace BigBang.WebApi
 
             services.AddMvc();
 
-            // services.AddMediatR(typeof(Startup));
-
             RegisterServices(services);
         }
 
