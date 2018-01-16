@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  bigbang.webapi:
-    image: bigbang.webapi
-    build:
-      context: ./Aplicacao/1 - Servicos/BigBang.WebApi
-      dockerfile: Dockerfile
