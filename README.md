@@ -5,12 +5,16 @@ Este projeto visa ser código base para as web aplicações, com abstrações e 
 
 Foi construído utilizando como base o [Equinox Project](https://github.com/EduardoPires/EquinoxProject).
 
-Principais responsáveis: [Lennon Alves](https://github.com/lennonalvesdias) e [Eduardo Lamattina](https://github.com/lamattina).
+Desenvolvedores responsáveis: [Lennon Alves](https://github.com/lennonalvesdias) e [Eduardo Lamattina](https://github.com/lamattina).
+Participações: [Luiz Mendes](https://github.com/jubamendes)
+
+Você pode acessar o projeto em execução [clicando aqui](http://104.225.220.166:5000).
 
 # O que você vai encontrar:
 
   - WebApi desenvolvida em .NET Core
   - DDD (Domain Driven Design)
+  - Domain Notifications
   - Abstração genérica da estrutura
   - Entity Framework
 
