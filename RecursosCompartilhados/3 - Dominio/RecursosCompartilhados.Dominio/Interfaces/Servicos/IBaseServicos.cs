@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RecursosCompartilhados.Dominio.Interfaces.Servicos
@@ -7,7 +8,7 @@ namespace RecursosCompartilhados.Dominio.Interfaces.Servicos
     {
         void Inserir(TEntidade entidade);
         TEntidade Buscar(Guid id);
-        IQueryable<TEntidade> Listar();
+        IList<TEntidade> Listar();
         void Atualizar(TEntidade entidade);
         void Remover(Guid id);
         int Salvar();

@@ -35,8 +35,8 @@ namespace BigBang.WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // services.AddAutoMapper();
-            
+            services.AddAutoMapper();
+
             services.AddSwaggerGen(s =>
             {
                 s.SwaggerDoc("V1", new Info

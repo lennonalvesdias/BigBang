@@ -1,3 +1,4 @@
+using AutoMapper;
 using BigBang.Aplicacao.Interfaces.ServicosApp;
 using BigBang.Aplicacao.ServicosApp;
 using BigBang.Dados.Contexto;
@@ -15,6 +16,8 @@ namespace BigBang.Infra
         public static void RegisterServices(IServiceCollection services)
         {
             // Aplicacao
+            services.AddSingleton(Mapper.Configuration);
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
             services.AddScoped<IPersonagemServicosApp, PersonagemServicosApp>();
 
             // Dominio

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using RecursosCompartilhados.Dominio.Interfaces.Repositorios;
 using RecursosCompartilhados.Dominio.Interfaces.Servicos;
@@ -34,9 +35,9 @@ namespace RecursosCompartilhados.Dominio.Servicos
             _repositorio.Inserir(entidade);
         }
 
-        IQueryable<TEntidade> IBaseServicos<TEntidade>.Listar()
+        IList<TEntidade> IBaseServicos<TEntidade>.Listar()
         {
-            return _repositorio.Listar();
+            return _repositorio.Listar().ToList();
         }
 
         void IBaseServicos<TEntidade>.Remover(Guid id)

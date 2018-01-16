@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using RecursosCompartilhados.Dominio.Interfaces.Servicos;
 using RecursosCompartilhados.Aplicacao.Interfaces.ServicosApp;
+using System.Collections.Generic;
 
 namespace RecursosCompartilhados.Aplicacao.ServicosApp
 {
@@ -34,7 +35,7 @@ namespace RecursosCompartilhados.Aplicacao.ServicosApp
             _servicos.Inserir(entidade);
         }
 
-        IQueryable<TEntidade> IBaseServicosApp<TEntidade>.Listar()
+        IList<TEntidade> IBaseServicosApp<TEntidade>.Listar()
         {
             return _servicos.Listar();
         }

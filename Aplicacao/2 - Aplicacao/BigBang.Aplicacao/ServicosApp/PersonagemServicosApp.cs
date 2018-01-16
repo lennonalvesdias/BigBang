@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using BigBang.Aplicacao.Interfaces.ServicosApp;
 using BigBang.Aplicacao.ViewModels;
 using BigBang.Dominio.Entidades;
@@ -15,21 +16,23 @@ namespace BigBang.Aplicacao.ServicosApp
     public class PersonagemServicosApp : IPersonagemServicosApp
     {
         private readonly IPersonagemServicos _servicos;
+        private readonly IMapper _mapper;
 
-        public PersonagemServicosApp(IPersonagemServicos servicos) {
+        public PersonagemServicosApp(IPersonagemServicos servicos, IMapper mapper) {
             _servicos = servicos;
+            _mapper = mapper;
         }
 
         void IBaseServicosApp<PersonagemViewModel>.Atualizar(PersonagemViewModel viewModel)
         {
-            Personagem map = EntidadeGenerica<PersonagemViewModel, Personagem>.ConverterViewModelEntidade(viewModel);
-            _servicos.Atualizar(map);
+            var personagem = _mapper.Map<Personagem>(viewModel);
+            _servicos.Atualizar(personagem);
         }
 
         PersonagemViewModel IBaseServicosApp<PersonagemViewModel>.Buscar(Guid id)
         {
             var personagem = _servicos.Buscar(id);
-            return EntidadeGenerica<Personagem, PersonagemViewModel>.ConverterViewModelEntidade(personagem);
+            return _mapper.Map<PersonagemViewModel>(personagem);
         }
 
         void IDisposable.Dispose()
@@ -39,15 +42,14 @@ namespace BigBang.Aplicacao.ServicosApp
 
         void IBaseServicosApp<PersonagemViewModel>.Inserir(PersonagemViewModel viewModel)
         {
-            Personagem map = EntidadeGenerica<PersonagemViewModel, Personagem>.ConverterViewModelEntidade(viewModel);
-            _servicos.Inserir(map);
+            var personagem = _mapper.Map<Personagem>(viewModel);
+            _servicos.Inserir(personagem);
         }
 
-        IQueryable<PersonagemViewModel> IBaseServicosApp<PersonagemViewModel>.Listar()
+        IList<PersonagemViewModel> IBaseServicosApp<PersonagemViewModel>.Listar()
         {
             var personagens = _servicos.Listar();
-            var map = EntidadeGenerica<Personagem, PersonagemViewModel>.ConverterListaViewModelEntidade(personagens);
-            return map;
+            return _mapper.Map<IList<PersonagemViewModel>>(personagens);
         }
 
         void IBaseServicosApp<PersonagemViewModel>.Remover(Guid id)

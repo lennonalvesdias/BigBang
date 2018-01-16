@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RecursosCompartilhados.Aplicacao.Interfaces.ServicosApp
@@ -7,7 +8,7 @@ namespace RecursosCompartilhados.Aplicacao.Interfaces.ServicosApp
     {
         void Inserir(TViewModel viewModel);
         TViewModel Buscar(Guid id);
-        IQueryable<TViewModel> Listar();
+        IList<TViewModel> Listar();
         void Atualizar(TViewModel viewModel);
         void Remover(Guid id);
         int Salvar();
