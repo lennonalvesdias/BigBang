@@ -18,6 +18,7 @@ Contribuições: [Luiz Mendes](https://github.com/jubamendes).
   - Domain Notifications
   - Abstração genérica da estrutura
   - Entity Framework
+  - Swagger UI
 
 # Porque BigBang?
 
