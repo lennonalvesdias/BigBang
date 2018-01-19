@@ -11,14 +11,18 @@ namespace BigBang.Dados.EntidadesConfig
             builder.ToTable("Personagens");
             
             builder.HasIndex(x => x.Nome)
-                .IsUnique(true);
+                .IsUnique();
 
             builder.Property(c => c.Id)
                 .HasColumnName("Id");
 
             builder.Property(c => c.Nome)
-                .HasColumnType("varchar(100)")
-                .HasMaxLength(100)
+                .HasColumnType("varchar(120)")
+                .HasMaxLength(120)
+                .IsRequired();
+
+            builder.Property(c => c.Idade)
+                .HasColumnType("integer")
                 .IsRequired();
         }
     }

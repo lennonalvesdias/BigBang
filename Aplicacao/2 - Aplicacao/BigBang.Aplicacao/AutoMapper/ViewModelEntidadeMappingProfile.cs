@@ -8,7 +8,9 @@ namespace BigBang.Aplicacao.AutoMapper
     {
         public ViewModelEntidadeMappingProfile()
         {
-            CreateMap<PersonagemViewModel, Personagem>();
+            CreateMap<PersonagemViewModel, Personagem>()
+                .ConstructUsing(c => new Personagem(c.Nome, c.Idade))
+                .IgnoreAllPropertiesWithAnInaccessibleSetter();
         }
     }
 }

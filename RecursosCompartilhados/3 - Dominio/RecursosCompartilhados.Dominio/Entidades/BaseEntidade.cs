@@ -1,8 +1,10 @@
 using System;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace RecursosCompartilhados.Dominio.Entidades
 {
-    public abstract class BaseEntidade
+    public abstract class BaseEntidade<TEntidade> : AbstractValidator<TEntidade>
     {
         public Guid Id { get; protected set; }
 
@@ -10,17 +12,20 @@ namespace RecursosCompartilhados.Dominio.Entidades
 
         public DateTime DataCriacaoRegistro { get; set; }
 
+        protected ValidationResult Validacao { get; set; }
+
+        public abstract bool EhValido();
+
         public override bool Equals(object obj)
         {
-            var compareTo = obj as BaseEntidade;
+            var compareTo = obj as BaseEntidade<TEntidade>;
 
             if (ReferenceEquals(this, compareTo)) return true;
-            if (ReferenceEquals(null, compareTo)) return false;
 
-            return Id.Equals(compareTo.Id);
+            return !ReferenceEquals(null, compareTo) && Id.Equals(compareTo.Id);
         }
 
-        public static bool operator ==(BaseEntidade a, BaseEntidade b)
+        public static bool operator ==(BaseEntidade<TEntidade> a, BaseEntidade<TEntidade> b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
                 return true;
@@ -31,7 +36,7 @@ namespace RecursosCompartilhados.Dominio.Entidades
             return a.Equals(b);
         }
 
-        public static bool operator !=(BaseEntidade a, BaseEntidade b)
+        public static bool operator !=(BaseEntidade<TEntidade> a, BaseEntidade<TEntidade> b)
         {
             return !(a == b);
         }

@@ -1,5 +1,4 @@
 using BigBang.Aplicacao.ViewModels;
-using BigBang.Dominio.Entidades;
 using RecursosCompartilhados.Aplicacao.Interfaces.ServicosApp;
 
 namespace BigBang.Aplicacao.Interfaces.ServicosApp

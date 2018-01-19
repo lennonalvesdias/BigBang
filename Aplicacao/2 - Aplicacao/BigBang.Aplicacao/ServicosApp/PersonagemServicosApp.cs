@@ -1,15 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using AutoMapper;
 using BigBang.Aplicacao.Interfaces.ServicosApp;
 using BigBang.Aplicacao.ViewModels;
 using BigBang.Dominio.Entidades;
 using BigBang.Dominio.Interfaces.Servicos;
 using RecursosCompartilhados.Aplicacao.Interfaces.ServicosApp;
-using RecursosCompartilhados.Aplicacao.ServicosApp;
-using RecursosCompartilhados.Aplicacao.ViewModel;
-using RecursosCompartilhados.Dominio.Interfaces.Servicos;
 
 namespace BigBang.Aplicacao.ServicosApp
 {
@@ -43,7 +39,9 @@ namespace BigBang.Aplicacao.ServicosApp
         void IBaseServicosApp<PersonagemViewModel>.Inserir(PersonagemViewModel viewModel)
         {
             var personagem = _mapper.Map<Personagem>(viewModel);
-            _servicos.Inserir(personagem);
+
+            if(personagem.EhValido())
+                _servicos.Inserir(personagem);
         }
 
         IList<PersonagemViewModel> IBaseServicosApp<PersonagemViewModel>.Listar()

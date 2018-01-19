@@ -15,6 +15,10 @@ namespace BigBang.Aplicacao.ViewModels
         [DisplayName("Nome")]
         public string Nome { get; set; }
 
+        [Required(ErrorMessage = "O idade é obrigatória.")]
+        [DisplayName("Idade")]
+        public int Idade { get; set; }
+
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         [DataType(DataType.Date, ErrorMessage = "Data em formato inválido.")]
         [DisplayName("Data de Criação")]
