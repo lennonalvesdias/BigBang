@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/BigBang.csproj"
+                "${workspaceFolder}/Aplicacao/1 - Servicos/BigBang.WebApi/BigBang.WebApi.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
