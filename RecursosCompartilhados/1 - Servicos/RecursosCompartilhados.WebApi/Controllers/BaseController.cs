@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RecursosCompartilhados.Dominio.Entidades;
 using RecursosCompartilhados.Dominio.Notificacoes;
 
 namespace RecursosCompartilhados.WebApi.Controllers
 {
+    [Authorize("Bearer")]
     public class BaseController : ControllerBase
     {
         private readonly GerenciadorDeNotificacoes _notificacoes;
