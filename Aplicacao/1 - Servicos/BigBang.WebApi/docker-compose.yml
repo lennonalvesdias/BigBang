@@ -1,0 +1,19 @@
+version: '2'
+services: 
+    bigbang:
+        build: .
+        ports:
+            "5151:5151"
+        restart: always
+        depends_on:
+            - sql_dev
+        environment:
+            - VIRTUAL_HOST=www.lennonalves.com.br,lennonalves.com.br
+    sql_dev:
+        image: microsoft/mssql-server-linux:2017-latest
+        ports:
+            "1401:1433"
+        restart: always
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD="Developer@2018"
