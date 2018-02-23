@@ -1,8 +1,0 @@
-﻿{
-  "swagger": "2.0",
-  "info": {
-    "version": "v1",
-    "title": "BigBang API"
-  },
-  "basePath": "/"
-}

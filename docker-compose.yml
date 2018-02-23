@@ -1,0 +1,41 @@
+version: '3'
+services: 
+    # bigbang:
+    #     build: .
+    #     ports:
+    #         - "5151:5151"
+    #     restart: always
+    #     deploy:
+    #         resources:
+    #             limits:
+    #                 cpus: '0.75'
+    #                 memory: 200M
+    #             reservations:
+    #                 cpus: '0.3'
+    #                 memory: 100M
+    #     depends_on:
+    #         - sql_dev
+    #     environment:
+    #         - VIRTUAL_HOST=www.lennonalves.com.br,lennonalves.com.br
+    #     container_name: bigbang
+    sql_dev:
+        image: microsoft/mssql-server-linux:2017-latest
+        ports:
+            - "1401:1433"
+        restart: always
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.2'
+                    memory: 2G
+                reservations:
+                    cpus: '0.1'
+                    memory: 1G
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=Developer@2018
+        container_name: sql_dev
+networks:
+  default:
+    external:
+      name: nginx-proxy
