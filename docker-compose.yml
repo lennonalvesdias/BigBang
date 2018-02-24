@@ -6,6 +6,8 @@ services:
             dockerfile: Dockerfile
         ports:
             - "5151:5151"
+        networks: 
+            - nginx-proxy
         restart: always
         # deploy:
         #     resources:
@@ -19,12 +21,13 @@ services:
             - sql_dev
         environment:
             - VIRTUAL_HOST=bigbang.lennonalves.com.br,bigbang.lennonalves.com
-        container_name: bigbang
     sql_dev:
         image: microsoft/mssql-server-linux:2017-latest
         ports:
             - "1401:1433"
-        restart: always
+        networks: 
+            - nginx-proxy
+        restart: unless-stopped
         # deploy:
         #     resources:
         #         limits:
@@ -36,12 +39,10 @@ services:
         environment:
             - ACCEPT_EULA=Y
             - MSSQL_SA_PASSWORD=Developer@2018
-            - MSSQL_PID=Developer
-        container_name: sql_dev
+            - MSSQL_PID=Developer        
 networks:
-  default:
-    external:
-      name: nginx-proxy
+  nginx-proxy:
+    external: true
 
 
 # CODE EXAMPLE
