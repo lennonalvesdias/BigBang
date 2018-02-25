@@ -1,0 +1,49 @@
+version: '3'
+services: 
+    bigbang:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "5151:5151"
+        networks: 
+            - nginx-proxy
+        restart: always
+        # deploy:
+        #     resources:
+        #         limits:
+        #             cpus: '0.75'
+        #             memory: 200M
+        #         reservations:
+        #             cpus: '0.3'
+        #             memory: 100M
+        depends_on:
+            - sql_dev
+        environment:
+            - VIRTUAL_HOST=bigbang.lennonalves.com.br,bigbang.lennonalves.com
+    sql_dev:
+        image: microsoft/mssql-server-linux:2017-latest
+        ports:
+            - "1401:1433"
+        networks: 
+            - nginx-proxy
+        restart: unless-stopped
+        # deploy:
+        #     resources:
+        #         limits:
+        #             cpus: '0.2'
+        #             memory: 2G
+        #         reservations:
+        #             cpus: '0.1'
+        #             memory: 1G
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=Developer@2018
+            - MSSQL_PID=Developer        
+networks:
+  nginx-proxy:
+    external: true
+
+
+# CODE EXAMPLE
+# command: /bin/bash -c "dotnet restore ./ && dotnet publish ./Aplicacao/1 - Servicos/BigBang.WebApi/ -c Release -o ./obj/Docker/publish"

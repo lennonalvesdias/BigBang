@@ -9,9 +9,6 @@ namespace BigBang.Dados.EntidadesConfig
         public void Configure(EntityTypeBuilder<Personagem> builder)
         {
             builder.ToTable("Personagens");
-            
-            builder.HasIndex(x => x.Nome)
-                .IsUnique(true);
 
             builder.Property(c => c.Id)
                 .HasColumnName("Id");

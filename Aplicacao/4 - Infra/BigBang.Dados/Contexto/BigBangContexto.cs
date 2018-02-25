@@ -10,10 +10,12 @@ namespace BigBang.Dados.Contexto
     public class BigBangContexto : BaseContexto
     {
         public DbSet<Personagem> Personagens { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PersonagemConfig());
+            modelBuilder.ApplyConfiguration(new UsuarioConfig());
 
             base.OnModelCreating(modelBuilder);
         }

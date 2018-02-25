@@ -18,14 +18,19 @@ namespace BigBang.Infra
             // Aplicacao
             services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
+
             services.AddScoped<IPersonagemServicosApp, PersonagemServicosApp>();
+            services.AddScoped<IUsuarioServicosApp, UsuarioServicosApp>();
 
             // Dominio
             services.AddScoped<IPersonagemServicos, PersonagemServicos>();
+            services.AddScoped<IUsuarioServicos, UsuarioServicos>();
 
             // Infra
-            services.AddScoped<IPersonagemRepositorio, PersonagemRepositorio>();
             services.AddScoped<BigBangContexto>();
+
+            services.AddScoped<IPersonagemRepositorio, PersonagemRepositorio>();
+            services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
         }
     }
 }

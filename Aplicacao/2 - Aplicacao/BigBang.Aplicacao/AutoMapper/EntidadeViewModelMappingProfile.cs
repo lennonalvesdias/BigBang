@@ -9,6 +9,7 @@ namespace BigBang.Aplicacao.AutoMapper
         public EntidadeViewModelMappingProfile() 
         {
             CreateMap<Personagem, PersonagemViewModel>();
+            CreateMap<Usuario, UsuarioViewModel>();
         }
     }
 }
