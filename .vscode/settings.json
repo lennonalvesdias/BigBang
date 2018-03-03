@@ -1,0 +1,33 @@
+{
+    "deploy.reloaded": {
+        "packages": [
+            {
+                "name": "Version 1.0",
+                "description": "Deploy version 1.0",
+
+                "files": [
+                    "*.*"
+                ],
+                
+                "exclude": [
+                    ""
+                ],
+
+                "deployOnSave": [ "la-folder" ]
+            }
+        ],
+
+        "targets": [
+            {
+                "type": "ftp",
+                "name": "BigBang_Production",
+                "description": "BigBang SSD Nodes Server",
+
+                "host": "#", "port": 22,
+                "user": "#", "password": "#",
+
+                "dir": "/home/lennonalvesdias/"
+            }
+        ]
+    }
+}

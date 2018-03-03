@@ -43,7 +43,3 @@ services:
 networks:
   nginx-proxy:
     external: true
-
-
-# CODE EXAMPLE
-# command: /bin/bash -c "dotnet restore ./ && dotnet publish ./Aplicacao/1 - Servicos/BigBang.WebApi/ -c Release -o ./obj/Docker/publish"
