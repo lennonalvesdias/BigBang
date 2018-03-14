@@ -39,7 +39,7 @@ services:
         environment:
             - ACCEPT_EULA=Y
             - MSSQL_SA_PASSWORD=Developer@2018
-            - MSSQL_PID=Developer        
+            - MSSQL_PID=Developer
 networks:
   nginx-proxy:
     external: true

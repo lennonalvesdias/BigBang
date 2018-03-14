@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using BigBang.Aplicacao.ViewModels;
 using Microsoft.Extensions.Options;
+using System.Linq;
+using BigBang.Dominio.Entidades;
 
 namespace BigBang.WebApi
 {
@@ -122,9 +124,26 @@ namespace BigBang.WebApi
             option.AddRedirect("^$", "swagger");
             app.UseRewriter(option);
 
-            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                serviceScope.ServiceProvider.GetService<BigBangContexto>().Database.Migrate();
+                var BigBangContextService = serviceScope.ServiceProvider.GetRequiredService<BigBangContexto>();
+                BigBangContextService.Database.Migrate();
+                if (!BigBangContextService.Usuarios.Any())
+                {
+                    var admin = new Usuario("administrador", "admin", "admin");
+                    BigBangContextService.Usuarios.Add(admin);
+                    BigBangContextService.SaveChanges();
+                }
+                if (!BigBangContextService.Personagens.Any())
+                {
+                    var sheldon = new Personagem("Sheldon Cooper");
+                    var leonard = new Personagem("Leonard Hofstadter");
+                    var penny = new Personagem("Penny");
+                    BigBangContextService.Personagens.Add(sheldon);
+                    BigBangContextService.Personagens.Add(leonard);
+                    BigBangContextService.Personagens.Add(penny);
+                    BigBangContextService.SaveChanges();
+                }
             }
         }
 
