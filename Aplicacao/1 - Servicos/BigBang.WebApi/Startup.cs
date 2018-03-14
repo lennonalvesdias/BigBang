@@ -121,6 +121,11 @@ namespace BigBang.WebApi
             var option = new RewriteOptions();
             option.AddRedirect("^$", "swagger");
             app.UseRewriter(option);
+
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                serviceScope.ServiceProvider.GetService<BigBangContexto>().Database.Migrate();
+            }
         }
 
         private static void RegisterServices(IServiceCollection services)
