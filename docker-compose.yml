@@ -9,18 +9,11 @@ services:
         networks: 
             - nginx-proxy
         restart: always
-        # deploy:
-        #     resources:
-        #         limits:
-        #             cpus: '0.75'
-        #             memory: 200M
-        #         reservations:
-        #             cpus: '0.3'
-        #             memory: 100M
         depends_on:
             - sql_dev
         environment:
-            - VIRTUAL_HOST=bigbang.lennonalves.com.br,bigbang.lennonalves.com
+            VIRTUAL_HOST: 'bigbang.lennonalves.com.br,bigbang.lennonalves.com'
+            VIRTUAL_PORT: 5151
     sql_dev:
         image: microsoft/mssql-server-linux:2017-latest
         ports:
@@ -28,14 +21,6 @@ services:
         networks: 
             - nginx-proxy
         restart: unless-stopped
-        # deploy:
-        #     resources:
-        #         limits:
-        #             cpus: '0.2'
-        #             memory: 2G
-        #         reservations:
-        #             cpus: '0.1'
-        #             memory: 1G
         environment:
             - ACCEPT_EULA=Y
             - MSSQL_SA_PASSWORD=Developer@2018
