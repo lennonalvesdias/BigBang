@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using AutoMapper;
 
 namespace RecursosCompartilhados.Aplicacao.ViewModel

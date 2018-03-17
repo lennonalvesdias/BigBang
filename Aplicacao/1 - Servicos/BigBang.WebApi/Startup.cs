@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Net.Http;
 using AutoMapper;
 using BigBang.Dados.Contexto;
 using Microsoft.AspNetCore.Builder;
@@ -149,7 +148,7 @@ namespace BigBang.WebApi
 
         private static void RegisterServices(IServiceCollection services)
         {
-            BigBang.Infra.NativeInjectorBootStrapper.RegisterServices(services);
+            Infra.NativeInjectorBootStrapper.RegisterServices(services);
             RecursosCompartilhados.Infra.NativeInjectorBootStrapper.RegisterServices(services);
         }
     }

@@ -3,7 +3,6 @@ using BigBang.Dominio.Entidades;
 using BigBang.Dominio.Interfaces.Repositorios;
 using RecursosCompartilhados.Dados.Repositorios;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace BigBang.Dados.Repositorios
 {

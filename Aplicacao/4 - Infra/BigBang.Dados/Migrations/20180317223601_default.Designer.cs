@@ -11,8 +11,8 @@ using System;
 namespace BigBang.Dados.Migrations
 {
     [DbContext(typeof(BigBangContexto))]
-    [Migration("20180111164521_Personagem_Index_IsUnique")]
-    partial class Personagem_Index_IsUnique
+    [Migration("20180317223601_default")]
+    partial class @default
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,10 +38,37 @@ namespace BigBang.Dados.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Nome")
-                        .IsUnique();
-
                     b.ToTable("Personagens");
+                });
+
+            modelBuilder.Entity("BigBang.Dominio.Entidades.Usuario", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Id");
+
+                    b.Property<string>("Apelido")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("DataAtualizacaoRegistro");
+
+                    b.Property<DateTime>("DataCriacaoRegistro");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuarios");
                 });
 #pragma warning restore 612, 618
         }

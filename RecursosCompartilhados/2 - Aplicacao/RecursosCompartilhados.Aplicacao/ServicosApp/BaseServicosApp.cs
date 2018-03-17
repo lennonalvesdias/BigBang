@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using RecursosCompartilhados.Dominio.Interfaces.Servicos;
 using RecursosCompartilhados.Aplicacao.Interfaces.ServicosApp;
 using System.Collections.Generic;
