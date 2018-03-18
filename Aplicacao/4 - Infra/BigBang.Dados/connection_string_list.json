@@ -1,4 +1,0 @@
-{
-    "Container": "Server=sql_dev;User id=SA;Password=Developer@2018;Database=BigBang;Trusted_Connection=False;MultipleActiveResultSets=true",
-    "Local": "Server=.\\SQLEXPRESS;Database=BigBang;Trusted_Connection=True;MultipleActiveResultSets=true"
-}
