@@ -11,7 +11,7 @@ using System;
 namespace BigBang.Dados.Migrations
 {
     [DbContext(typeof(BigBangContexto))]
-    [Migration("20180317223601_default")]
+    [Migration("20180318230222_default")]
     partial class @default
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
