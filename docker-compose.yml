@@ -12,7 +12,7 @@ services:
         depends_on:
             - sql_dev
         environment:
-            VIRTUAL_HOST: bigbang.lennonalves.com.br,bigbang.lennonalves.com
+            - VIRTUAL_HOST=bigbang.lennonalves.com.br,bigbang.lennonalves.com
     sql_dev:
         image: microsoft/mssql-server-linux:2017-latest
         ports:
