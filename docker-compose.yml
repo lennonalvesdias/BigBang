@@ -13,6 +13,7 @@ services:
             - sql_dev
         environment:
             - VIRTUAL_HOST=bigbang.lennonalves.com.br,bigbang.lennonalves.com
+            - VIRTUAL_PORT=5151
     sql_dev:
         image: microsoft/mssql-server-linux:2017-latest
         ports:
