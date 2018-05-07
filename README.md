@@ -9,7 +9,7 @@ Desenvolvedores responsáveis: [Lennon Alves](https://github.com/lennonalvesdias
 
 Contribuições: [Luiz Mendes](https://github.com/jubamendes).
 
-  - Você pode acessar o projeto em execução [clicando aqui](http://104.225.220.166:5151/swagger/#/).
+  - Você pode acessar o projeto em execução [clicando aqui](https://bigbang.lennonalves.com.br/swagger/).
 
 # O que você vai encontrar:
 
